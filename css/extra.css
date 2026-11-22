@@ -1,0 +1,626 @@
+/*
+  Дополнения: кнопка «Вверх», избранное в шапке, страницы «О нас», «Контакты» (проезд и FAQ),
+  «Избранное», кнопки на карточках главной, обновлённый подвал.
+  Подключается последним.
+*/
+
+/* ===============================
+   1. Кнопка «Вверх» (без стрелки) и чат — справа внизу
+   =============================== */
+.button.back-to-top {
+    width: auto;
+    height: 44px;
+    padding: 0 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    border-radius: 22px;
+}
+
+.chat-toggle {
+    right: auto;
+    left: 16px;
+}
+
+.chat {
+    right: 8px;
+    left: 8px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+@media (min-width: 640px) {
+    .chat-toggle {
+        left: 24px;
+    }
+
+    .chat {
+        right: auto;
+        left: 24px;
+        width: 380px;
+    }
+
+    .success-message {
+        right: auto;
+        left: 50%;
+        width: max-content;
+        max-width: min(480px, calc(100vw - 48px));
+        transform: translateX(-50%);
+    }
+}
+
+/* ===============================
+   2. Избранное в шапке
+   =============================== */
+.fav-link {
+    position: relative;
+    order: 3;
+}
+
+.fav-link svg {
+    width: 22px;
+    height: 22px;
+}
+
+.fav-link:hover svg,
+.fav-link[aria-current="page"] svg {
+    color: #d6336c;
+    fill: currentColor;
+}
+
+.fav-link__text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.fav-link__count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    color: #ffffff;
+    background-color: #d6336c;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+}
+
+.fav-link__count[hidden] {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .fav-link {
+        order: 5;
+    }
+}
+
+/* ===============================
+   3. Общие мелочи
+   =============================== */
+.section__lead {
+    max-width: 70ch;
+    margin: 0 0 var(--space-lg);
+    color: var(--color-muted);
+    font-size: 1.05rem;
+}
+
+.section__more {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: var(--space-lg) 0 0;
+}
+
+.section--cta {
+    padding: var(--space-lg);
+    background-color: var(--color-surface-accent);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+/* Карточки на главной: «Подробнее» + «В избранное» + «Заказать» */
+.product-card__actions--home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-top: auto;
+}
+
+.product-card__actions--home .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.product-card__actions--home .product-card__order {
+    grid-column: 1 / -1;
+}
+
+.product-card__actions .button {
+    text-decoration: none;
+}
+
+.product-card--favorite {
+    border-color: #d6336c;
+}
+
+/* ===============================
+   4. Подвал
+   =============================== */
+.site-footer__text--contact a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.site-footer__brand {
+    font-size: 24px;
+    letter-spacing: -0.01em;
+}
+
+.site-footer__bottom {
+    align-items: center;
+}
+
+/* ===============================
+   5. Контакты
+   =============================== */
+.contact-cards {
+    display: grid;
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-lg);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.contact-card__title {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.contact-card__value {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.contact-card__value a {
+    text-decoration: none;
+}
+
+.contact-card__note {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.route {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.route__item {
+    padding: var(--space-lg);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.route__title {
+    margin: 0 0 var(--space-sm);
+    font-size: 1.1rem;
+}
+
+.route__steps {
+    margin: 0;
+    padding-left: 1.3em;
+}
+
+.route__steps li {
+    margin-bottom: var(--space-sm);
+}
+
+.route__steps--plain {
+    padding-left: 1.1em;
+}
+
+.route__note {
+    margin: var(--space-sm) 0 0;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-surface-accent);
+    border-radius: var(--radius-md);
+}
+
+.faq {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.faq__item {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.faq__item[open] {
+    border-color: var(--color-primary);
+}
+
+.faq__question {
+    position: relative;
+    display: block;
+    padding: var(--space-md) 48px var(--space-md) var(--space-md);
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq__question::-webkit-details-marker {
+    display: none;
+}
+
+.faq__question::after {
+    content: "+";
+    position: absolute;
+    top: 50%;
+    right: var(--space-md);
+    color: var(--color-primary);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1;
+    transform: translateY(-50%);
+}
+
+.faq__item[open] .faq__question::after {
+    content: "\2212";
+}
+
+.faq__question:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-md);
+}
+
+.faq__answer {
+    margin: 0;
+    padding: 0 var(--space-md) var(--space-md);
+    color: var(--color-muted);
+}
+
+/* ===============================
+   6. О нас
+   =============================== */
+.about-hero__lead {
+    max-width: 70ch;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.about-stats__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.about-stats__num {
+    color: var(--color-primary);
+    font-size: clamp(1.8rem, 6vw, 2.6rem);
+    line-height: 1.1;
+}
+
+html[data-theme="dark"] .about-stats__num {
+    color: #6fb0ff;
+}
+
+.about-stats__label {
+    color: var(--color-muted);
+}
+
+.about-text {
+    max-width: 70ch;
+}
+
+.about-text p {
+    margin: 0 0 var(--space-md);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.timeline {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 var(--space-lg);
+    list-style: none;
+    border-left: 3px solid var(--color-primary-soft);
+}
+
+.timeline__item {
+    position: relative;
+    margin-bottom: var(--space-lg);
+}
+
+.timeline__item::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: calc(-1 * var(--space-lg) - 9px);
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-primary);
+    border: 3px solid var(--page-bg);
+    border-radius: 50%;
+}
+
+.timeline__year {
+    display: block;
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+html[data-theme="dark"] .timeline__year {
+    color: #6fb0ff;
+}
+
+.timeline__text {
+    margin: 0;
+}
+
+.country-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin: 0 0 var(--space-md);
+    padding: 0;
+    list-style: none;
+}
+
+.country-chips li {
+    padding: 8px 16px;
+    background-color: var(--color-primary-soft);
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.about-thanks__text {
+    max-width: 70ch;
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ===============================
+   7. Страница «Избранное»
+   =============================== */
+.fav-empty {
+    padding: var(--space-xl) var(--space-lg);
+    text-align: center;
+    background-color: var(--color-bg);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.fav-empty[hidden] {
+    display: none;
+}
+
+.fav-empty__title {
+    margin: 0 0 var(--space-xs);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.fav-empty__text {
+    margin: 0 0 var(--space-md);
+    color: var(--color-muted);
+}
+
+/* ===============================
+   8. Адаптив
+   =============================== */
+@media (min-width: 640px) {
+    .contact-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .route {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 900px) {
+    .about-stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .contact-cards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .section--cta {
+        padding: var(--space-xl);
+    }
+}
+
+/* Карта на странице контактов */
+.map {
+    margin-bottom: var(--space-lg);
+}
+
+.map__frame {
+    display: block;
+    width: 100%;
+    height: 280px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+}
+
+.map__link {
+    margin: var(--space-sm) 0 0;
+}
+
+@media (min-width: 900px) {
+    .map__frame {
+        height: 380px;
+    }
+}
+
+/* ===============================
+   Подвал (новый вид)
+   =============================== */
+.site-footer {
+    border-top: 4px solid #6fb0ff;
+}
+
+.site-footer__inner {
+    padding-top: var(--space-xl);
+}
+
+.site-footer__grid {
+    gap: var(--space-xl);
+}
+
+.footer-brand__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.footer-brand__logo:hover {
+    text-decoration: none;
+}
+
+.footer-brand__text {
+    max-width: 36ch;
+    margin: var(--space-md) 0;
+    color: var(--footer-text);
+    line-height: 1.6;
+}
+
+.footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 8px 16px;
+    color: #8be5a2;
+    background-color: rgba(139, 229, 162, 0.08);
+    border: 1px solid rgba(139, 229, 162, 0.35);
+    border-radius: 999px;
+    font-size: 14px;
+}
+
+.footer-badge__dot {
+    width: 8px;
+    height: 8px;
+    background-color: #8be5a2;
+    border-radius: 50%;
+}
+
+.site-footer__list a {
+    color: var(--footer-text);
+}
+
+.site-footer__list a:hover {
+    color: #ffffff;
+}
+
+.footer-contact {
+    display: grid;
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--footer-text);
+}
+
+.footer-contact a {
+    color: #ffffff;
+}
+
+.footer-contact__icon {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    color: #6fb0ff;
+    background-color: rgba(111, 176, 255, 0.12);
+    border-radius: 10px;
+}
+
+.footer-contact__icon svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (min-width: 640px) {
+    .site-footer__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .site-footer__grid {
+        grid-template-columns: 1.4fr 0.8fr 0.9fr 1.5fr;
+    }
+}
+
+/* Нижняя строка подвала не должна прятаться под кнопками «Чат» и «Вверх» */
+.site-footer__inner {
+    padding-bottom: 88px;
+}

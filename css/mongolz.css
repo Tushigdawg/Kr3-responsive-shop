@@ -1,0 +1,514 @@
+/*
+  Mongolz: монгольское оформление.
+  Цвета — синий «хөх» и красный из флага, золото; узор «хээ» (меандр) и узел «улзий».
+  Подключается последним и переопределяет цвета через переменные.
+*/
+
+:root {
+    --color-primary: #1b3f94;
+    --color-primary-dark: #12306f;
+    --color-primary-soft: #e8edf9;
+    --color-surface-accent: #fbf3e2;
+    --color-border: #e4d8c2;
+    --color-text: #2a211b;
+    --color-muted: #6b5d51;
+    --color-danger: #b3122e;
+    --mn-red: #b3122e;
+    --mn-red-dark: #8f0e25;
+    --mn-gold: #e0a526;
+    --mn-gold-soft: #f2c14e;
+    --mn-deep: #0f1f4d;
+    --page-bg: #fbf7ee;
+    --footer-bg: #0f1f4d;
+    --footer-text: #cfd7ee;
+    --shadow-card: 0 1px 2px rgba(80, 50, 10, 0.08), 0 4px 14px rgba(80, 50, 10, 0.08);
+
+    /* Орнамент «хээ»: золотой меандр на красной полосе */
+    --mn-border: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='16' viewBox='0 0 24 16'%3E%3Crect width='24' height='16' fill='%23b3122e'/%3E%3Cpath d='M0 14H24M4 14V3H20V10H8V6H16V8' fill='none' stroke='%23e0a526' stroke-width='1.8'/%3E%3C/svg%3E");
+}
+
+html[data-theme="dark"] {
+    --color-primary: #f2c14e;
+    --color-primary-dark: #ffd98a;
+    --color-primary-soft: #2e2418;
+    --color-bg: #17110c;
+    --color-surface: #211810;
+    --color-surface-accent: #2a1f15;
+    --color-border: #3d2f21;
+    --color-text: #f1e8da;
+    --color-muted: #bfb09c;
+    --color-white: #1a1208;
+    --color-danger: #ff8a9a;
+    --page-bg: #100b07;
+    --footer-bg: #0a1230;
+    --footer-text: #b9c3de;
+}
+
+/* Заголовки с лёгкой засечкой */
+h1, h2, .site-header__logo, .footer-brand__logo, .hero__title {
+    font-family: Georgia, "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+}
+
+/* Полоса с орнаментом над шапкой */
+body::before {
+    content: "";
+    display: block;
+    height: 16px;
+    background: var(--mn-border) repeat-x left top;
+}
+
+/* Логотип */
+.site-header__mark {
+    background: linear-gradient(135deg, #1b3f94, #0f1f4d);
+    color: var(--mn-gold-soft);
+    box-shadow: 0 0 0 2px var(--mn-gold);
+}
+
+html[data-theme="dark"] .site-header__mark {
+    background: linear-gradient(135deg, #2e2418, #0f1f4d);
+}
+
+.site-header__logo {
+    font-size: 1.35rem;
+    letter-spacing: 0.01em;
+}
+
+/* Заголовки секций */
+.section__title::after,
+.catalog-products__title::after {
+    width: 64px;
+    height: 5px;
+    background: linear-gradient(90deg, var(--mn-red) 0 50%, var(--mn-gold) 50% 100%);
+}
+
+/* Кнопки */
+.button--primary {
+    background-color: var(--color-primary);
+}
+
+html[data-theme="dark"] .button--primary {
+    color: #1a1208;
+}
+
+.product-card__order,
+.calc__order,
+.product-details__actions .button--primary {
+    background-color: var(--mn-red);
+    color: #ffffff;
+}
+
+.product-card__order:hover,
+.calc__order:hover,
+.product-details__actions .button--primary:hover {
+    background-color: var(--mn-red-dark);
+}
+
+html[data-theme="dark"] .product-card__order,
+html[data-theme="dark"] .calc__order,
+html[data-theme="dark"] .product-details__actions .button--primary {
+    color: #ffffff;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    background: linear-gradient(135deg, #17306f 0%, #0f1f4d 100%);
+    border: 2px solid var(--mn-gold);
+    padding-bottom: calc(var(--space-xl) + 16px);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 16px;
+    background: var(--mn-border) repeat-x left bottom;
+}
+
+.hero__eyebrow {
+    color: #1a1208;
+    background-color: var(--mn-gold-soft);
+    border-color: var(--mn-gold);
+}
+
+.hero__title {
+    color: #ffffff;
+}
+
+.hero__text {
+    color: #dbe3f7;
+}
+
+.hero__stats {
+    border-top-color: rgba(255, 255, 255, 0.25);
+}
+
+.hero__stats strong {
+    color: var(--mn-gold-soft);
+}
+
+.hero__stats span {
+    color: #dbe3f7;
+}
+
+.hero .button--primary {
+    color: #1a1208;
+    background-color: var(--mn-gold-soft);
+}
+
+.hero .button--primary:hover {
+    background-color: #ffd98a;
+}
+
+.hero .button--secondary {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.hero .button--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.hero__image {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Карточки */
+.product-card {
+    border-color: var(--color-border);
+}
+
+.product-card__media {
+    background-color: #ffffff;
+}
+
+.product-card__price,
+.product-card__price span:last-child {
+    color: var(--color-primary);
+}
+
+html[data-theme="dark"] .product-card__media {
+    background-color: #f3ede2;
+}
+
+.product-card--featured {
+    border-color: var(--mn-gold);
+}
+
+.badge {
+    background-color: var(--mn-gold-soft);
+    color: #1a1208;
+}
+
+.badge--new {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+html[data-theme="dark"] .badge--new {
+    color: #1a1208;
+}
+
+.badge--discount {
+    background-color: var(--mn-red);
+    color: #ffffff;
+}
+
+/* Подвал */
+.site-footer {
+    border-top: 0;
+    background-color: var(--footer-bg);
+    position: relative;
+}
+
+.site-footer::before {
+    content: "";
+    display: block;
+    height: 16px;
+    background: var(--mn-border) repeat-x left top;
+}
+
+.footer-contact__icon {
+    color: var(--mn-gold-soft);
+    background-color: rgba(242, 193, 78, 0.14);
+}
+
+.footer-brand__logo {
+    color: #ffffff;
+}
+
+/* Избранное */
+.fav-link__count {
+    background-color: var(--mn-red);
+}
+
+.fav-link:hover svg,
+.fav-link[aria-current="page"] svg {
+    color: var(--mn-red);
+}
+
+/* О нас */
+html[data-theme="dark"] .about-stats__num,
+html[data-theme="dark"] .timeline__year {
+    color: var(--mn-gold-soft);
+}
+
+.about-stats__num,
+.timeline__year {
+    color: var(--mn-red);
+}
+
+.timeline {
+    border-left-color: var(--mn-gold);
+}
+
+.timeline__item::before {
+    background-color: var(--mn-red);
+}
+
+.country-chips li {
+    background-color: var(--color-surface-accent);
+    border: 1px solid var(--mn-gold);
+}
+
+.section--cta {
+    border: 1px solid var(--mn-gold);
+    background-image: linear-gradient(var(--color-surface-accent), var(--color-surface-accent));
+    position: relative;
+}
+
+/* Контакты */
+.route__note {
+    background-color: var(--color-surface-accent);
+    border-left: 4px solid var(--mn-gold);
+}
+
+/* Орнаментальный разделитель */
+.ornament {
+    height: 16px;
+    margin: var(--space-xl) auto;
+    max-width: var(--container-width);
+    background: var(--mn-border) repeat-x center;
+    border-radius: 3px;
+}
+
+/* ===============================
+   Калькулятор
+   =============================== */
+.calc {
+    scroll-margin-top: 80px;
+}
+
+.calc__layout {
+    display: grid;
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+.calc__form,
+.calc__result {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+}
+
+.calc__form {
+    display: grid;
+    gap: var(--space-lg);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.calc__row {
+    display: grid;
+    gap: var(--space-md);
+}
+
+.calc__field {
+    display: grid;
+    gap: var(--space-xs);
+}
+
+.calc__label,
+.calc__legend {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.calc__control {
+    width: 100%;
+    min-height: 44px;
+    padding: 8px 12px;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font: inherit;
+}
+
+.calc__control:focus-visible,
+.calc__option input:focus-visible {
+    outline: 3px solid var(--mn-gold);
+    outline-offset: 2px;
+}
+
+.calc__control:disabled {
+    opacity: 0.6;
+}
+
+.calc__fieldset {
+    display: grid;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.calc__legend {
+    padding: 0 var(--space-sm);
+}
+
+.calc__option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-height: 44px;
+    padding: 8px 10px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.calc__option:hover {
+    background-color: var(--color-surface-accent);
+}
+
+.calc__option[hidden] {
+    display: none;
+}
+
+.calc__option input {
+    flex: none;
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--mn-red);
+}
+
+.calc__option small {
+    display: block;
+    color: var(--color-muted);
+}
+
+.calc__promo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+
+.calc__promo .calc__control {
+    flex: 1 1 180px;
+    width: auto;
+    text-transform: uppercase;
+}
+
+.calc__hint {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.calc__result {
+    color: #ffffff;
+    background: linear-gradient(160deg, #17306f, #0f1f4d);
+    border: 2px solid var(--mn-gold);
+    box-shadow: var(--shadow-md);
+}
+
+.calc__result-title {
+    margin: 0 0 var(--space-xs);
+    color: var(--mn-gold-soft);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+.calc__item {
+    margin: 0 0 var(--space-md);
+    color: #dbe3f7;
+}
+
+.calc__lines {
+    display: grid;
+    gap: 2px;
+    margin: 0;
+}
+
+.calc__line {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+}
+
+.calc__line dt {
+    color: #dbe3f7;
+}
+
+.calc__line dd {
+    margin: 0;
+    font-weight: 600;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.calc__free {
+    color: #8be5a2;
+}
+
+.calc__total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+    font-size: 1.1rem;
+}
+
+.calc__total strong {
+    color: var(--mn-gold-soft);
+    font-size: clamp(1.6rem, 5vw, 2.1rem);
+    line-height: 1.1;
+}
+
+.calc__order {
+    width: 100%;
+    justify-content: center;
+}
+
+.calc__note {
+    margin: var(--space-sm) 0 0;
+    color: #b9c3de;
+    font-size: 0.85rem;
+}
+
+@media (min-width: 640px) {
+    .calc__row {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .calc__layout {
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    }
+
+    .calc__result {
+        position: sticky;
+        top: 16px;
+    }
+}

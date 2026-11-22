@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Иллюстрация: монгольская юрта на фоне степи и заходящего солнца">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10286b"/>
+      <stop offset="0.5" stop-color="#2f4f9f"/>
+      <stop offset="0.78" stop-color="#e9863f"/>
+      <stop offset="1" stop-color="#f6c36b"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="800" height="600" rx="47"/></clipPath>
+    <pattern id="hee" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M0 21H24M4 21V4H20V16H8V8H16V12" fill="none" stroke="#e0a526" stroke-width="2.2"/>
+    </pattern>
+  </defs>
+  <g clip-path="url(#clip)">
+  <rect width="800" height="600" fill="url(#sky)"/>
+  <!-- солнце и лучи -->
+  <g transform="translate(560 330)">
+    <g stroke="#ffd166" stroke-width="5" stroke-linecap="round" opacity="0.85">
+      <path d="M0 -125V-100M0 125V100M-125 0H-100M125 0H100M-88 -88L-70 -70M88 -88L70 -70M-88 88L-70 70M88 88L70 70"/>
+    </g>
+    <circle r="78" fill="#ffd166"/>
+    <circle r="58" fill="#ffe29a"/>
+    <circle r="36" fill="#fff3c9"/>
+  </g>
+  <!-- облака-узоры -->
+  <g fill="none" stroke="#f6f0dd" stroke-width="5" stroke-linecap="round" opacity="0.9">
+    <path d="M70 150c0-26 38-26 38 0 0-22 32-22 32 4 18-6 30 6 22 20H72c-14-2-18-18-2-24z"/>
+    <path d="M300 90c0-20 30-20 30 0 0-18 26-18 26 3 14-5 24 5 18 16H302c-12-2-14-14-2-19z"/>
+  </g>
+  <!-- холмы -->
+  <path d="M0 400C120 350 220 360 330 395S560 420 800 360V600H0z" fill="#31498f"/>
+  <path d="M0 450C140 410 260 430 400 455S650 470 800 430V600H0z" fill="#22386f"/>
+  <path d="M0 505C160 480 300 500 440 520S700 530 800 500V600H0z" fill="#16264f"/>
+  <!-- большая юрта -->
+  <g transform="translate(250 0)">
+    <path d="M-110 468L0 372L110 468z" fill="#fff8ea" stroke="#d8c8a6" stroke-width="3"/>
+    <rect x="-96" y="456" width="192" height="64" rx="6" fill="#fffdf6" stroke="#d8c8a6" stroke-width="3"/>
+    <rect x="-96" y="452" width="192" height="10" fill="#c4122f"/>
+    <rect x="-96" y="462" width="192" height="6" fill="url(#hee)"/>
+    <path d="M0 372L-60 440M0 372L-25 450M0 372L25 450M0 372L60 440" stroke="#d8c8a6" stroke-width="2"/>
+    <circle cx="0" cy="372" r="9" fill="#e0a526"/>
+    <rect x="-24" y="474" width="48" height="46" rx="4" fill="#b3122e" stroke="#e0a526" stroke-width="4"/>
+    <path d="M0 474V520" stroke="#e0a526" stroke-width="3"/>
+  </g>
+  <!-- малая юрта -->
+  <g transform="translate(480 20)">
+    <path d="M-70 504L0 448L70 504z" fill="#fff8ea" stroke="#d8c8a6" stroke-width="2"/>
+    <rect x="-60" y="496" width="120" height="44" rx="5" fill="#fffdf6" stroke="#d8c8a6" stroke-width="2"/>
+    <rect x="-60" y="494" width="120" height="8" fill="#c4122f"/>
+    <circle cx="0" cy="448" r="6" fill="#e0a526"/>
+    <rect x="-15" y="508" width="30" height="32" rx="3" fill="#1b3f94" stroke="#e0a526" stroke-width="3"/>
+  </g>
+  <!-- орнамент снизу -->
+  <rect x="0" y="560" width="800" height="40" fill="#c4122f"/>
+  <rect x="0" y="568" width="800" height="24" fill="url(#hee)"/>
+</g>
+</svg>
