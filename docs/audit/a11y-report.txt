@@ -1,0 +1,34 @@
+
+== light:index: 0 issues
+
+== light:catalog: 0 issues
+
+== light:product: 0 issues
+
+== light:about: 0 issues
+
+== light:contacts: 0 issues
+
+== light:favorites: 0 issues
+
+== light:login: 0 issues
+
+== light:account: 0 issues
+
+== dark:index: 0 issues
+
+== dark:catalog: 0 issues
+
+== dark:product: 0 issues
+
+== dark:about: 0 issues
+
+== dark:contacts: 0 issues
+
+== dark:favorites: 0 issues
+
+== dark:login: 0 issues
+
+== dark:account: 0 issues
+
+TOTAL 0

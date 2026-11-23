@@ -1,0 +1,9 @@
+focus index: 48 tab stops, no-visible-focus: none
+focus catalog: 67 tab stops, no-visible-focus: none
+focus product: 47 tab stops, no-visible-focus: none
+focus about: 27 tab stops, no-visible-focus: none
+focus contacts: 40 tab stops, no-visible-focus: none
+focus favorites: 26 tab stops, no-visible-focus: none
+focus login: 37 tab stops, no-visible-focus: none
+focus account: 37 tab stops, no-visible-focus: none
+order dialog at 320: dialog 19..301 of 320, scrollW 320

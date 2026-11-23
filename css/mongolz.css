@@ -512,3 +512,27 @@ html[data-theme="dark"] .timeline__year {
         top: 16px;
     }
 }
+
+/* Калькулятор на узких экранах: колонки и fieldset не должны быть шире экрана */
+.calc__layout > *,
+.calc__form,
+.calc__fieldset,
+.calc__field,
+.calc__row > * {
+    min-width: 0;
+}
+
+.calc__line dd {
+    white-space: normal;
+}
+
+.calc__option span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Заметное кольцо фокуса у поля поиска (внутренний input обводку не рисует) */
+.site-search__field:focus-within {
+    outline: 3px solid var(--mn-gold);
+    outline-offset: 2px;
+}
