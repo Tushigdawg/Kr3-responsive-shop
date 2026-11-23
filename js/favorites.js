@@ -41,8 +41,11 @@
 
   function paintButton(button) {
     const active = favorites.includes(productId(button));
+    // ARIA: aria-pressed сообщает скринридеру, нажата ли кнопка-переключатель; aria-label добавляет название товара.
     button.setAttribute('aria-pressed', String(active));
     button.textContent = active ? 'В избранном' : 'В избранное';
+    const product = PRODUCTS.find((p) => String(p.id) === productId(button));
+    if (product && !button.hasAttribute('data-keep-label')) button.setAttribute('aria-label', `${button.textContent}: ${product.name}`);
     const card = button.closest('.product-card');
     if (card) card.classList.toggle('product-card--favorite', active);
   }
@@ -104,7 +107,7 @@
       img.src = src;
       img.srcset = srcset;
       img.sizes = '(min-width: 900px) 360px, (min-width: 640px) 46vw, 92vw';
-      img.width = 480; img.height = 480; img.alt = p.name; img.loading = 'lazy'; img.decoding = 'async';
+      img.width = 480; img.height = 480; img.alt = p.alt || p.name; img.loading = 'lazy'; img.decoding = 'async';
       media.append(img);
 
       const title = document.createElement('h3');
@@ -129,7 +132,10 @@
 
       const actions = document.createElement('div');
       actions.className = 'product-card__actions';
+      card.setAttribute('aria-labelledby', `card-title-${p.id}`);
+      title.id = `card-title-${p.id}`;
       const more = document.createElement('a');
+      more.setAttribute('aria-label', `Подробнее: ${p.name}`);
       more.className = 'button button--secondary';
       more.href = `product.html?id=${p.id}`;
       more.textContent = 'Подробнее';

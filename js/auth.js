@@ -307,7 +307,7 @@
       $('#profile-created').textContent = dateFormat.format(new Date(fresh.created));
       const region = window.ShopRegion ? window.ShopRegion.current : null;
       $('#profile-country').textContent = region ? `${region.name} (${region.currency})` : '—';
-      document.title = `Личный кабинет — ${fresh.name} — Учебный интернет-магазин`;
+      document.title = `Личный кабинет — ${fresh.name} — Mongolz`;
     }
 
     function renderOrders() {

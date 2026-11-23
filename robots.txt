@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /login.html
+Disallow: /account.html
+Disallow: /favorites.html
+
+Sitemap: https://mongolz.ru/sitemap.xml

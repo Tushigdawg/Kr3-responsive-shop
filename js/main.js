@@ -322,7 +322,7 @@ if (productPage) {
   const isOut = p.tag === 'out';
   const discount = p.old ? Math.round(((p.old - p.price) / p.old) * 100) : 0;
 
-  document.title = `${name} — Учебный интернет-магазин`;
+  document.title = `${name} — Mongolz`;
   byId('product-title').textContent = name;
   byId('crumb-current').textContent = name;
 
@@ -334,7 +334,7 @@ if (productPage) {
   image.sizes = '(min-width: 768px) 46vw, 92vw';
   image.width = largest;
   image.height = largest;
-  image.alt = name;
+  image.alt = p.alt || name;
 
   const crumb = byId('crumb-category');
   crumb.textContent = categoryName;
